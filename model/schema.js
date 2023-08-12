@@ -184,11 +184,11 @@ const chatAdminSchema=mongoose.Schema({
 async function findCollectionWithFacultyNameChatDB(facultyName,requirementName) {
     try {
         console.log(facultyName)
-      const collections = await chats.db.listCollections().toArray();
-      console.log("Collections",collections)
+      // const collections = await chats.db.listCollections().toArray();
+      // console.log("Collections",collections)
     //   const matchingCollection = collections.find((collection) => collection.name === facultyName);
     //   console.log("matching Collection",matchingCollection)
-      const facultyChatModel = chats.model(facultyName.name, chatUsersSchema,facultyName);       
+      const facultyChatModel = chats.model(facultyName, chatUsersSchema,facultyName);       
       const messages = await facultyChatModel.find({requirementName:requirementName});
       //console.log("Messages",Messages)
       console.log(messages)
@@ -201,11 +201,11 @@ async function findCollectionWithFacultyNameChatDB(facultyName,requirementName) 
 async function findCollectionWithFacultyNameAdminDB(facultyName,requirementName) {
     try {
         console.log(facultyName)
-      const collections = await admin.db.listCollections().toArray();
-      console.log(collections)
+      // const collections = await admin.db.listCollections().toArray();
+      // console.log(collections)
     //   const matchingCollection = collections.find((collection) => collection.name === facultyName);
     //   console.log(matchingCollection)
-      const adminChatModel = admin.model(facultyName.name, chatAdminSchema,facultyName);       
+      const adminChatModel = admin.model(facultyName, chatAdminSchema,facultyName);       
       const messages = await adminChatModel.find({requirementName:requirementName});
       //const Messages = [...messages]
       //console.log("Messages",Messages)
