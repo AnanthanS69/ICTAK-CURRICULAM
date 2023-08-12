@@ -184,7 +184,7 @@ const chatAdminSchema=mongoose.Schema({
 async function findCollectionWithFacultyNameChatDB(facultyName,requirementName) {
     try {
         console.log(facultyName)
-      const facultyChatModel = chats.model(facultyName.name, chatUsersSchema,facultyName);       
+      const facultyChatModel = chats.model(facultyName, chatUsersSchema,facultyName);       
       const messages = await facultyChatModel.find({requirementName:requirementName});
       //console.log("Messages",Messages)
       console.log(messages)
@@ -197,7 +197,7 @@ async function findCollectionWithFacultyNameChatDB(facultyName,requirementName) 
 async function findCollectionWithFacultyNameAdminDB(facultyName,requirementName) {
     try {
         console.log(facultyName)
-      const adminChatModel = admin.model(facultyName.name, chatAdminSchema,facultyName);       
+      const adminChatModel = admin.model(facultyName, chatAdminSchema,facultyName);       
       const messages = await adminChatModel.find({requirementName:requirementName});
       //const Messages = [...messages]
       //console.log("Messages",Messages)
