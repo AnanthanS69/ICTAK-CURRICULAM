@@ -188,7 +188,7 @@ async function findCollectionWithFacultyNameChatDB(facultyName,requirementName) 
       console.log("Collections",collections)
     //   const matchingCollection = collections.find((collection) => collection.name === facultyName);
     //   console.log("matching Collection",matchingCollection)
-      const facultyChatModel = chats.model(facultyName.name, chatAdminSchema,facultyName);       
+      const facultyChatModel = chats.model(facultyName.name, chatUseraSchema,facultyName);       
       const messages = await facultyChatModel.find({requirementName:requirementName});
       //console.log("Messages",Messages)
       console.log(messages)
